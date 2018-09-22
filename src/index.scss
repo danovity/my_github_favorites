@@ -1,0 +1,63 @@
+@import "base";
+@import "App";
+@import "search";
+@import "favorites";
+
+//RESET
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 57.5%;
+
+  @media only screen and (max-width: 1800px) {
+    font-size: 70%; //1rem=12px, 12/16=75%
+  }
+  @media only screen and (max-width: 1200px) {
+    font-size: 56.25%; //1rem=9px, 9/16=56.25%
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 50%; //1rem=8px, 8/16=50%
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  min-width: 300px;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: min-content min-content minmax(min-content, 100vh) repeat(
+      6,
+      min-content
+    );
+  height: 100vh;
+  grid-template-columns:
+    [full-start]1fr [center-start]minmax(min-content, 144rem)
+    [center-end] 1fr[full-end];
+}
+
+.header {
+  grid-column: full-start/full-end;
+  display: grid;
+  padding: 0 1rem;
+  grid-template-columns: 1fr minmax(min-content, 144rem) 1fr;
+  height: 15vh;
+  align-content: center;
+  @media only screen and(max-width: 1200px) {
+    padding: 0 1rem;
+  }
+}
+
+#root {
+  grid-column: span 3;
+}

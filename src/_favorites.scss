@@ -1,0 +1,32 @@
+.favorites {
+  background-color: #f3ecfe;
+  padding: 5rem;
+  font-size: 1.6rem;
+
+  &-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) min-content;
+    font-size: 1.6rem;
+    grid-column-gap: 1rem;
+  }
+
+  &__favorites-headers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 2rem;
+  }
+
+  &__favorites-result {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) min-content;
+
+    &--name {
+    }
+    &--language {
+    }
+    &--latest-tag {
+    }
+    &--remove-button {
+    }
+  }
+}
