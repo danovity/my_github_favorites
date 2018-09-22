@@ -38,6 +38,14 @@ li {
   margin-top: 1rem;
 }
 
+li a {
+  color: $color-primary;
+  transition: all 0.2s;
+  &:hover {
+    color: #b592f8;
+  }
+}
+
 .repoName {
   text-decoration: none;
   color: black;

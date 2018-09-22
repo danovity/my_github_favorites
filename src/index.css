@@ -29,6 +29,12 @@ ul {
 li {
   margin-top: 1rem; }
 
+li a {
+  color: #7433f1;
+  transition: all 0.2s; }
+  li a:hover {
+    color: #b592f8; }
+
 .repoName {
   text-decoration: none;
   color: black;
@@ -61,7 +67,8 @@ li {
     background-color: #7433f1;
     padding: 1rem 0;
     transition: all 0.2s;
-    border-radius: 0.5rem; }
+    border-radius: 0.5rem;
+    color: white; }
     .search__search-button:hover {
       color: white;
       cursor: pointer;
