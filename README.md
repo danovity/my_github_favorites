@@ -36,6 +36,7 @@
 - react-dom
 - react-scripts
 - node-sass-chokidar
+- uuid
 
 ## Getting Started
 
