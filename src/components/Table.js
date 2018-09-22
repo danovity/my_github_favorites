@@ -4,7 +4,7 @@ import Column from "./Column";
 const uuidv1 = require("uuid/v1");
 
 const Table = ({ listToBeRendered, addToFavorites, removeFromFavorites }) => {
-  let headerNames = ["Name", "Language", "Latest Tag", "empty"];
+  let headerNames = ["Name", "Language", "Latest tag", "empty"];
 
   let sortedObject = {
     name: [],
