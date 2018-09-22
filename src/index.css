@@ -35,6 +35,8 @@ li {
   transition: all 0.2s; }
   .repoName:hover {
     color: #7433f1; }
+  .repoName:focus {
+    outline: none; }
 
 .search {
   background-color: #ffffff;
