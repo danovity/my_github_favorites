@@ -20,7 +20,6 @@ class App extends Component {
   }
 
   submitQuery = e => {
-    console.log("search clicked");
     this.setState({ search: [] });
     //Send GraphQL Query
     axios({
@@ -58,16 +57,11 @@ class App extends Component {
           }}`
       }
     }).then(result => {
-      console.log(result.data.data.search.edges);
       const queryResults = result.data.data.search.edges;
 
-      console.log(
-        "queryResults[0].node,",
-        queryResults[4].node.releases.edges[0]
-      );
       queryResults.forEach((cur, i) => {
         let length = Object.keys(this.state.search).length;
-        console.log("length is, ", length);
+
         const currentSearchState = { ...this.state.search };
 
         let latestTag =
@@ -94,13 +88,11 @@ class App extends Component {
           }
         };
         this.setState({ search: newSearchState });
-        console.log("newSearchState", newSearchState);
       });
     });
   };
 
   queryListener = e => {
-    console.log(e.target.value);
     if (e.target.value === "") {
       this.setState({ search: [] });
     }
@@ -110,8 +102,6 @@ class App extends Component {
 
   addToFavorites = e => {
     e.preventDefault();
-    console.log("Add button clicked.");
-    console.log(e.currentTarget.id);
 
     let currentSearchState = { ...this.state.search };
     currentSearchState[e.currentTarget.id].Button.Add = false;
@@ -134,8 +124,6 @@ class App extends Component {
 
   removeFromFavorites = e => {
     e.preventDefault();
-    console.log("Remove is clicked.");
-    console.log(e.currentTarget.id);
     let updatedFavorites = { ...this.state.favorites };
 
     let updatedFavoritesItemName = updatedFavorites[e.currentTarget.id].Name;
@@ -144,7 +132,7 @@ class App extends Component {
 
     let currentSearchState = { ...this.state.search };
 
-    Object.keys(currentSearchState).map((key, i) => {
+    Object.keys(currentSearchState).forEach((key, i) => {
       if (currentSearchState[key].Name === updatedFavoritesItemName) {
         currentSearchState[key].Button.Add = true;
       }
@@ -156,8 +144,6 @@ class App extends Component {
     let finalUpdatedFavorites = {};
 
     Object.keys(updatedFavorites).forEach((key, i) => {
-      let length = Object.keys(updatedFavorites).length;
-
       finalUpdatedFavorites[i] = updatedFavorites[key];
     });
 

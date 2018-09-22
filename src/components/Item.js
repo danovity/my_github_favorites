@@ -1,7 +1,6 @@
 import React from "react";
 
 const Item = ({ item, addToFavorites, id, removeFromFavorites }) => {
-  console.log("item is, ", item);
   if (item.Add) {
     return (
       <li onClick={addToFavorites} id={id}>

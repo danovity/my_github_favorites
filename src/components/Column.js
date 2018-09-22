@@ -1,6 +1,7 @@
 import React from "react";
 import ListHeader from "./ListHeader";
 import Item from "./Item";
+const uuidv1 = require("uuid/v1");
 
 const Column = ({
   headerName,
@@ -15,6 +16,7 @@ const Column = ({
         id={i}
         addToFavorites={addToFavorites}
         removeFromFavorites={removeFromFavorites}
+        key={uuidv1()}
       />
     );
   });
