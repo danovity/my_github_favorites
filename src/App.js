@@ -138,14 +138,14 @@ class App extends Component {
     e.preventDefault();
     let updatedFavorites = { ...this.state.favorites };
 
-    let updatedFavoritesItemName = updatedFavorites[e.currentTarget.id].Name;
+    let updatedFavoritesItemName = updatedFavorites[e.currentTarget.id].Name[0];
 
     delete updatedFavorites[e.currentTarget.id];
 
     let currentSearchState = { ...this.state.search };
 
     Object.keys(currentSearchState).forEach((key, i) => {
-      if (currentSearchState[key].Name === updatedFavoritesItemName) {
+      if (currentSearchState[key].Name[0] === updatedFavoritesItemName) {
         currentSearchState[key].Button.Add = true;
       }
     });
