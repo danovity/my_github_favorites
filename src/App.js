@@ -78,7 +78,7 @@ class App extends Component {
           }
         }
 
-        const newSearchState = {
+        let newSearchState = {
           ...currentSearchState,
           [length]: {
             Name: [cur.node.nameWithOwner, cur.node.url],
@@ -87,6 +87,18 @@ class App extends Component {
             Button: { Add: true }
           }
         };
+
+        let updatedFavorites = { ...this.state.favorites };
+
+        Object.keys(updatedFavorites).forEach((key, i) => {
+          let oneOfFavoritesItemName = updatedFavorites[key].Name[0];
+          Object.keys(newSearchState).forEach((keyTwo, index) => {
+            if (newSearchState[keyTwo].Name[0] === oneOfFavoritesItemName) {
+              newSearchState[keyTwo].Button.Add = false;
+            }
+          });
+        });
+
         this.setState({ search: newSearchState });
       });
     });
