@@ -1,5 +1,7 @@
 # [My Github Favorites](https://danovity.github.io/my_github_favorites/)
 
+For live version, please visit https://danovity.github.io/my_github_favorites/
+
 "My Github Favorites" will allow users to search Github repositories, favourite repos, and manage favourites.
 
 ## Final Product
