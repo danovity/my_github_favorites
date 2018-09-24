@@ -26,7 +26,7 @@ class App extends Component {
       url: "https://api.github.com/graphql",
       method: "post",
       headers: {
-        Authorization: ""
+        Authorization: "Bearer 527dd68d220dc99220a412f4cc97bd1fbe16ca29"
       },
       data: {
         query: `{

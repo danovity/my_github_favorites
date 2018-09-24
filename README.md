@@ -1,4 +1,4 @@
-# My Github Favorites
+# [My Github Favorites](https://danovity.github.io/my_github_favorites/)
 
 "My Github Favorites" will allow users to search Github repositories, favourite repos, and manage favourites.
 
